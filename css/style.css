@@ -9,13 +9,14 @@ body {
     background-color: #b30000;
 }
 
+/*____________inicio cabecalho______________*/
 header#cabecalho-principal {
     /*box*/
     background-color: #dddddd;
     width: 100%;
     height: 40px;
 
-    /*posicionamento itens box*/
+    /*posicionamento itens in box*/
     display: flex;
     flex-direction: row;
 
@@ -39,7 +40,7 @@ header#cabecalho-principal {
     color: white;
     font-weight: 700;
 
-    /*posicionamento itens on box*/
+    /*posicionamento itens in box*/
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -48,6 +49,7 @@ header#cabecalho-principal {
 }
 
 #pontuacao-game img{
+    /*posicionamento*/
     margin-right: 15px;
 }
 
@@ -59,7 +61,17 @@ header#cabecalho-principal {
     /*posicionamento*/
     margin-right: 20px;
 }
+/*______________fim cabecalho______________*/
 
+section#corpo {
+    /*itens in box*/
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 50px;
+}
+
+/*______________box esquerdo_______________*/
 section#corpo div#esquerda {
     /*posicionamento box*/
     margin-top: 15px;
@@ -74,14 +86,19 @@ section#corpo div#esquerda {
     align-items: center;
     
     /*tamanho box*/
-    width: 50%;
+    width: 60%;
 
 }
 
 section#corpo div#esquerda div#cor-atual {
+    background-color: yellow;
+    
+    /*margem*/
+    margin-top: 10px;
+    
     /*tamanho box*/
-    height: 160px;
-    width: 160px;
+    height: 200px;
+    width: 200px;
 
     /*borda box*/
     border: 10px solid black;
@@ -95,17 +112,27 @@ section#corpo div#esquerda button#btn-responder{
     /*margem*/
     margin-top: 10px;
     
+    /*padding*/
+    padding: 5px 45px;
+
     /*font*/
     color: white;
     font-size: 25px;
     font-weight: bold;
-
-    /*padding*/
-    padding: 5px 45px;
-
+  
     /*border*/
     border: 1px solid white;
     border-radius: 5px;
 }
+/*__fim_________box esquerdo_______________*/
 
+/*__inicio______box direito________________*/
+
+section#corpo div#direita {
+    
+    /*tamanho box*/
+    width: 40%;
+
+
+}
 
