@@ -88,7 +88,7 @@ section#corpo div#esquerda {
 }
 
 section#corpo div#esquerda div#cor-atual {
-  background-color: yellow;
+  /*background-color: yellow;*/
 
   /*margem*/
   margin-top: 10px;
