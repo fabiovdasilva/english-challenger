@@ -58,7 +58,7 @@ function atualizaPontuacao(valor){
 //API de reconhecimento de voz
 var btnGravador = document.getElementById('btn-responder');
 var transcricaoAudio = "";
-
+var respostaCorreta = "";
 
 
 if(window.SpeechRecognition || window.webkitSpeechRecognition){
@@ -72,8 +72,8 @@ if(window.SpeechRecognition || window.webkitSpeechRecognition){
   gravador.onstart = function(){
     btnGravador.innerText = "Estou Ouvindo";
 
-    btnGravador.style.backgroundColor = white;
-    btnGravador.style.color = black;
+    btnGravador.style.backgroundColor = "white";
+    btnGravador.style.color = "black";
 
   }
 
@@ -85,7 +85,20 @@ if(window.SpeechRecognition || window.webkitSpeechRecognition){
   }
 
   gravador.onresult = function(event){
-    console.log(event);
+    transcricaoAudio = event.result[0][0].transcript.toUpperCase();
+    respostaCorreta = document.getElementById("cor-na-caixa").innerText.toUpperCase();
+    
+    
+    
+    
+    if(transcricaoAudio === respostaCorreta){
+      atualizaPontuacao(1);
+    }else{
+      atualizaPontuacao(-1);
+    }
+
+    aplicarCorNaCaixa(sortearCor());
+
   }
 
 }else{
