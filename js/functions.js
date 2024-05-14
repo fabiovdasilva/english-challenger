@@ -54,3 +54,45 @@ function atualizaPontuacao(valor){
 
   pontuacao.innerText = engine.moedas;
 }
+
+//API de reconhecimento de voz
+var btnGravador = document.getElementById('btn-responder');
+var transcricaoAudio = "";
+
+
+
+if(window.SpeechRecognition || window.webkitSpeechRecognition){
+  var SpeechAPI = window.SpeechRecognition || window.webkitSpeechRecognition;
+  var gravador = new SpeechAPI();
+
+  gravador.continuos = false; /*gravacao não será continua*/
+  gravador.lang = "en-US";
+
+
+  gravador.onstart = function(){
+    btnGravador.innerText = "Estou Ouvindo";
+
+    btnGravador.style.backgroundColor = white;
+    btnGravador.style.color = black;
+
+  }
+
+  gravador.oend = function( ){
+    btnGravador.innerText = "RESPONDER";
+
+    btnGravador.style.backgroundColor = "transparent";
+    btnGravador.style.color = "white";
+  }
+
+  gravador.onresult = function(event){
+    console.log(event);
+  }
+
+}else{
+  alert("Navegador não tem suporte!!")
+}
+
+
+btnGravador.addEventListener('click', function(e){
+  gravador.start();
+})
