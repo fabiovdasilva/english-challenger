@@ -55,7 +55,7 @@ function atualizaPontuacao(valor){
   pontuacao.innerText = engine.moedas;
 }
 
-aplicarCorNaCaixa(sortearCor());
+aplicarCorNaCaixa(sortearCor())
 
 //API de reconhecimento de voz
 var btnGravador = document.getElementById('btn-responder');
@@ -79,7 +79,7 @@ if(window.SpeechRecognition || window.webkitSpeechRecognition){
 
   }
 
-  gravador.oend = function( ){
+  gravador.onend = function(){
     btnGravador.innerText = "RESPONDER";
 
     btnGravador.style.backgroundColor = "transparent";
@@ -87,8 +87,8 @@ if(window.SpeechRecognition || window.webkitSpeechRecognition){
   }
 
   gravador.onresult = function(event){
-    transcricaoAudio = event.result[0][0].transcript.toUpperCase();
-    respostaCorreta = document.getElementById("cor-na-caixa").innerText.toUpperCase();
+    transcricaoAudio = event.results[0][0].transcript.toUpperCase();
+    respostaCorreta = document.getElementById('cor-na-caixa').innerText.toUpperCase();
     
     
     
@@ -99,7 +99,7 @@ if(window.SpeechRecognition || window.webkitSpeechRecognition){
       atualizaPontuacao(-1);
     }
 
-    
+    aplicarCorNaCaixa(sortearCor());
 
   }
 
