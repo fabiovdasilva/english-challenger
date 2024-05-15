@@ -55,6 +55,8 @@ function atualizaPontuacao(valor){
   pontuacao.innerText = engine.moedas;
 }
 
+aplicarCorNaCaixa(sortearCor());
+
 //API de reconhecimento de voz
 var btnGravador = document.getElementById('btn-responder');
 var transcricaoAudio = "";
@@ -97,7 +99,7 @@ if(window.SpeechRecognition || window.webkitSpeechRecognition){
       atualizaPontuacao(-1);
     }
 
-    aplicarCorNaCaixa(sortearCor());
+    
 
   }
 
